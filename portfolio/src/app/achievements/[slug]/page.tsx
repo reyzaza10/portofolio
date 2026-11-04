@@ -3,14 +3,15 @@ import { notFound } from 'next/navigation';
 import { achievements } from '@/data/achievements';
 import { AchievementDetailView } from '@/components/cards/AchievementCard';
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return achievements.map((a) => ({ slug: a.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const achievement = achievements.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const achievement = achievements.find((a) => a.slug === slug);
   if (!achievement) return { title: 'Not Found' };
   return {
     title: achievement.title,
@@ -18,8 +19,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function AchievementDetailPage({ params }: Props) {
-  const achievement = achievements.find((a) => a.slug === params.slug);
+export default async function AchievementDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const achievement = achievements.find((a) => a.slug === slug);
   if (!achievement) notFound();
 
   return (
