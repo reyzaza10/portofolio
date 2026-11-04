@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Muhammad Reyza Ashidiqie Portofolio</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f7f8fa;--fg:#1f2328;--fg2:#57606a;
+  --border:#e5e7eb;--accent:#3b82d4;--radius:14px;
+  --font:-apple-system,"Segoe UI",system-ui,sans-serif;
+}
+[data-dark]{
+  --bg:#0d1117;--bg2:#161b22;--fg:#e6edf3;--fg2:#8d96a0;
+  --border:#30363d;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);font-size:15px;line-height:1.65;transition:background .25s,color .25s}
+a{color:inherit;text-decoration:none}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px;max-width:960px;margin:0 auto;padding:0 24px}
+.nav-logo{font-weight:600;font-size:14px}
+.nav-links{display:flex;gap:2px}
+.nav-links a{font-size:13px;padding:6px 10px;border-radius:8px;color:var(--fg2);transition:background .15s,color .15s}
+.nav-links a:hover,.nav-links a.active{background:var(--bg2);color:var(--fg)}
+.nav-links a.active{color:var(--accent);font-weight:500}
+.theme-btn{background:none;border:1px solid var(--border);cursor:pointer;padding:5px 10px;border-radius:8px;color:var(--fg2);font-size:13px;transition:background .15s}
+.theme-btn:hover{background:var(--bg2)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;font-size:20px;color:var(--fg2);padding:4px}
+.mobile-menu{display:none;background:var(--bg);border-top:1px solid var(--border);padding:8px 16px 12px}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:10px 8px;font-size:14px;border-radius:8px;color:var(--fg2)}
+.mobile-menu a:hover{background:var(--bg2);color:var(--fg)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:58px;background:var(--bg)}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px 0 40px}
+.hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.hero-name{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.hero-headline{font-size:15px;color:var(--fg2);margin-top:10px;font-weight:500}
+.hero-bio{margin-top:18px;color:var(--fg2);max-width:480px;font-size:14px}
+.socials{display:flex;gap:16px;margin-top:24px}
+.socials a{color:var(--fg2);font-size:13px;font-weight:500;padding:5px 10px;border-radius:8px;border:1px solid var(--border)}
+.socials a:hover{background:var(--bg2);color:var(--fg)}
+.avatar {width:260px;height:300px;border-radius:18px;background:var(--bg2);border:2px solid var(--border);overflow:hidden;margin-left:auto}
+.avatar img {width: 100%;height: 100%;object-fit: contain;object-position: center;display: block;border-radius: 18px;}
+
+/* SECTION */
+section{padding:80px 0}
+section:nth-child(even){background:var(--bg2)}
+section:nth-child(odd){background:var(--bg)}
+.sec-title{font-size:clamp(1.3rem,3vw,1.75rem);font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.sec-sub{font-size:14px;color:var(--fg2);margin-bottom:36px;max-width:560px}
+.sec-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:36px}
+.view-all{font-size:13px;color:var(--accent)}
+.view-all:hover{text-decoration:underline}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:190px 1fr;gap:36px;align-items:start}
+.about-photo{width:190px;height:190px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.about-photo img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:14px}
+.about-text p{font-size:14px;color:var(--fg2);line-height:1.7}
+.about-text p+p{margin-top:12px}
+.goal-label{font-style: italic ;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-top:50px;margin-bottom:5px}
+
+/* EDUCATION */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;}
+.edu-card {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    align-items: flex-start;
+}
+.edu-icon{width:40px;height:40px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+.edu-body {
+    flex: 1;
+    min-width: 0;}
+.edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+.edu-inst{font-weight:600;font-size:14px}
+.edu-date {
+    font-size: 13px;
+    color: var(--fg2);
+    white-space: nowrap;
+}
+.edu-deg{font-size:13px;color:var(--fg2);margin-top:2px}
+.edu-desc{font-size:13px;color:var(--fg2);margin-top:9px;line-height:1.6}
+@media (max-width: 600px) {
+    .edu-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* SKILLS */
+.skill-cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-bottom:12px}
+.skill-group+.skill-group{margin-top:28px}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.skill-card{padding:13px 15px;border-radius:10px;border:1px solid var(--border);background:var(--bg);display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.skill-name{font-size:13px;font-weight:500}
+.skill-desc{font-size:12px;color:var(--fg2);margin-top:3px}
+.badge{display:inline-flex;align-items:center;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:500;flex-shrink:0}
+.badge-default{background:var(--bg2);color:var(--fg2);border:1px solid var(--border)}
+.badge-info{background:#eff6ff;color:#1d4ed8}
+[data-dark] .badge-info{background:#1e3a5f;color:#93c5fd}
+.badge-success{background:#f0fdf4;color:#15803d}
+[data-dark] .badge-success{background:#14532d;color:#86efac}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-group{margin-bottom:32px}
+.exp-group-label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--fg2);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.exp-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.exp-item:last-child{border-bottom:none;padding-bottom:0}
+.exp-icon{width:38px;height:38px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;margin-top:2px}
+.exp-body{flex:1;min-width:0}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.exp-title{font-weight:600;font-size:14px;line-height:1.3}
+.exp-meta{font-size:12px;color:var(--fg2);margin-top:2px}
+.exp-date{font-size:12px;color:var(--fg2);white-space:nowrap;flex-shrink:0}
+.exp-bullets{list-style:none;padding:0;margin-top:9px;display:flex;flex-direction:column;gap:4px}
+.exp-bullets li{font-size:13px;color:var(--fg2);line-height:1.55;padding-left:14px;position:relative}
+.exp-bullets li::before{content:"–";position:absolute;left:0;color:var(--border)}
+/* ACHIEVEMENTS */
+.ach-list{display:flex;flex-direction:column;gap:12px}
+.ach-card{display:flex;gap:16px;padding:18px 20px;border-radius:12px;border:1px solid var(--border);background:var(--bg);align-items:flex-start}
+.ach-icon{width:38px;height:38px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.ach-body{flex:1;min-width:0}
+.ach-title{font-weight:600;font-size:14px;line-height:1.3}
+.ach-sub{font-size:13px;color:var(--fg2);margin-top:3px;line-height:1.5}
+.ach-date{font-size:12px;color:var(--fg2);margin-top:4px}
+
+/* EMPTY */
+.empty{padding:50px 0;text-align:center}
+.empty-dot{width:42px;height:42px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:16px;color:var(--fg2)}
+.empty-title{font-size:14px;font-weight:500;color:var(--fg2)}
+.empty-sub{font-size:13px;color:var(--fg2);opacity:.6;margin-top:4px}
+
+/* PROJECTS */
+.proj-card{border-radius:var(--radius);border:1px solid var(--border);background:var(--bg);overflow:hidden;transition:border-color .15s}
+.proj-card:hover{border-color:var(--fg2)}
+.proj-thumb{width:100%;overflow:hidden;background:var(--bg2);cursor:zoom-in;display:block;border-bottom:1px solid var(--border)}
+.proj-thumb img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block;transition:transform .3s}
+.proj-thumb:hover img{transform:scale(1.01)}
+.proj-body{padding:22px 22px 20px}
+.proj-cats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.proj-cat{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg2)}
+.proj-cat+.proj-cat::before{content:"·";margin-right:6px;color:var(--border)}
+.proj-title{font-size:1rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.proj-subtitle{font-size:13px;color:var(--fg2);margin-top:3px}
+.proj-desc{font-size:13px;color:var(--fg2);line-height:1.7;margin-top:12px}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.proj-badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:500;background:var(--bg2);color:var(--fg2);border:1px solid var(--border)}
+.proj-divider{border:none;border-top:1px solid var(--border);margin:18px 0}
+.proj-features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.proj-feat-title{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--fg);margin-bottom:6px}
+.proj-feat-list{list-style:none;padding:0}
+.proj-feat-list li{font-size:12px;color:var(--fg2);line-height:1.6;padding-left:14px;position:relative}
+.proj-feat-list li::before{content:"–";position:absolute;left:0;color:var(--border)}
+.proj-insights{margin-top:14px;padding:14px 16px;border-radius:10px;background:var(--bg2);border:1px solid var(--border)}
+.proj-insights-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-bottom:8px}
+.proj-insights-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.proj-insights-list li{font-size:12px;color:var(--fg2);padding-left:16px;position:relative;line-height:1.55}
+.proj-insights-list li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:10px;top:2px}
+.proj-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:18px}
+.proj-disclaimer{font-size:11px;color:var(--fg2);opacity:.7;font-style:italic;max-width:480px;line-height:1.5}
+.proj-links{display:flex;gap:8px;flex-shrink:0}
+.proj-link{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:500;border:1px solid var(--border);color:var(--fg2);transition:background .15s,border-color .15s,color .15s}
+.proj-link:hover{background:var(--bg2);border-color:var(--fg2);color:var(--fg)}
+.proj-link-primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.proj-link-primary:hover{opacity:.85;background:var(--fg);color:var(--bg)}
+/* lightbox */
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px}
+.lb-overlay.open{display:flex}
+.lb-overlay img{max-width:100%;max-height:90vh;border-radius:10px;object-fit:contain}
+.lb-close{position:fixed;top:16px;right:20px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;opacity:.8}
+.lb-close:hover{opacity:1}
+@media(max-width:600px){
+  .proj-features{grid-template-columns:1fr}
+  .proj-footer{flex-direction:column;align-items:flex-start}
+  .proj-links{width:100%}
+  .proj-link{flex:1;justify-content:center}
+}
+
+/* CERTIFICATIONS */
+.cert-summary{font-size:13px;color:var(--fg2);margin-bottom:20px}
+.cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.cert-filter-btn{padding:5px 14px;border-radius:99px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--bg);color:var(--fg2);cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.cert-filter-btn:hover{background:var(--bg2);border-color:var(--fg2);color:var(--fg)}
+.cert-filter-btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.cert-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
+.cert-card{border-radius:12px;border:1px solid var(--border);background:var(--bg);padding:18px;display:flex;flex-direction:column;gap:0;transition:border-color .15s,transform .15s;opacity:0;transform:translateY(12px)}
+.cert-card.visible{opacity:1;transform:translateY(0);transition:opacity .35s ease,transform .35s ease,border-color .15s}
+@media(prefers-reduced-motion:reduce){.cert-card,.cert-card.visible{transition:border-color .15s;opacity:1;transform:none}}
+.cert-card:hover{border-color:var(--fg2);transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){.cert-card:hover{transform:none}}
+.cert-card[hidden]{display:none}
+.cert-cat-badge{display:inline-flex;align-items:center;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:500;background:var(--bg2);color:var(--fg2);border:1px solid var(--border);margin-bottom:10px;align-self:flex-start}
+.cert-name{font-weight:600;font-size:13px;line-height:1.4;color:var(--fg)}
+.cert-issuer{font-size:12px;color:var(--fg2);margin-top:4px;line-height:1.4}
+.cert-dates{font-size:11px;color:var(--fg2);margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.cert-dates span{display:inline-flex;align-items:center;gap:3px}
+.cert-id-row{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.cert-id{font-size:10px;color:var(--fg2);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.cert-copy-btn{flex-shrink:0;background:none;border:1px solid var(--border);border-radius:6px;padding:2px 7px;font-size:10px;color:var(--fg2);cursor:pointer;transition:background .15s}
+.cert-copy-btn:hover{background:var(--bg2);color:var(--fg)}
+.cert-footer{margin-top:12px;display:flex;justify-content:flex-end}
+.cert-verify-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;border:1px solid var(--border);color:var(--fg2);transition:background .15s,border-color .15s,color .15s}
+.cert-verify-btn:hover{background:var(--bg2);border-color:var(--fg2);color:var(--fg)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.footer-name{font-size:13px;font-weight:500}
+.footer-headline{font-size:12px;color:var(--fg2)}
+.footer-links{display:flex;gap:4px}
+.footer-links a{padding:6px 8px;color:var(--fg2);font-size:13px;border-radius:7px;font-weight:500}
+.footer-links a:hover{background:var(--bg2);color:var(--fg)}
+.footer-copy{text-align:center;margin-top:18px;font-size:12px;color:var(--fg2);opacity:.7;border-top:1px solid var(--border);padding-top:16px}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .hero-inner{grid-template-columns:1fr;gap:28px;padding:36px 0 28px}
+  .avatar{margin:0 auto}
+  .about-grid{grid-template-columns:1fr;gap:22px}
+  .about-photo{margin:0 auto}
+  .footer-inner{flex-direction:column;text-align:center}
+  .sec-row{flex-direction:column;align-items:flex-start;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Muhammad Reyza Ashidiqie</a>
+    <div class="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px">
+      <button class="theme-btn" id="theme-btn">Dark</button>
+      <button class="hamburger" id="ham-btn">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#projects">Projects</a>
+  </div>
+</nav>
+
+<section id="hero" style="padding:0">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow"></p>
+        <h1 class="hero-name">Muhammad Reyza<br>Ashidiqie</h1>
+        <p class="hero-headline">Smart City Information Systems Student | Data Enthusiast</p>
+        <p class="hero-bio">Mahasiswa Sistem Informasi Kota Cerdas yang memiliki ketertarikan pada pengolahan data, database, SQL, Python, dan visualisasi data. Berkomitmen membangun kompetensi teknis yang relevan dengan kebutuhan industri.</p>
+        <div class="socials">
+          <a href="https://github.com/reyzaza10" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://id.linkedin.com/in/muhammad-reyza-ashidiqie-bb7070431" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://instagram.com/reyza_ashidiqie" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:2019reyza@gmail.com">Email</a>
+        </div>
+      </div>
+      <div>
+        <div class="avatar">
+          <img src="foto-hero.jpg" alt="Foto profil Muhammad Reyza Ashidiqie">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="sec-title">Tentang saya</h2>
+    <p class="sec-sub">Mengenal perjalanan saya, mulai dari pengalaman, ketertarikan di bidang teknologi dan data, hingga visi saya dalam mengembangkan karier profesional.</p>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="foto-about.jpg" alt="Foto Muhammad Reyza Ashidiqie">
+      </div>
+      <div class="about-text">
+        <p>Saya adalah mahasiswa Sistem Informasi Kota Cerdas dengan minat yang kuat di bidang pengolahan dan analisis data. Ketertarikan saya bermula dari rasa ingin tahu terhadap bagaimana data dapat diubah menjadi informasi bermakna untuk mendukung pengambilan keputusan.</p>
+        <p>Saat ini saya sedang membangun fondasi teknis di bidang SQL, Python, dan visualisasi data, sambil terus mengembangkan pemahaman terhadap konsep basis data, statistik, dan sistem informasi.</p>
+        <p>Saya percaya bahwa kombinasi antara kemampuan teknis dan pemahaman konteks bisnis adalah kunci untuk memberikan dampak nyata melalui data.</p>
+        <p class="goal-label">Professional Goal</p>
+        <p>Membangun karier di bidang data dan analitik, berkontribusi pada organisasi yang memanfaatkan data untuk inovasi dan pengambilan keputusan strategis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2 class="sec-title">Education</h2>
+    <p class="sec-sub">Riwayat pendidikan formal.</p>
+    <div class="education-list">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-body">
+          <div class="edu-row">
+            <div>
+              <div class="edu-inst">Politeknik Negeri Indramayu</div>
+              <div class="edu-deg">Sarjana Terapan (D4) · Sistem Informasi Kota Cerdas</div>
+            </div>
+            <div class="edu-date">2026 — Present</div>
+          </div>
+          <div class="edu-desc">Mempelajari sistem informasi berbasis Smart City, basis data, analitik data, jaringan komputer, dan pengembangan sistem digital.</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">🏫</div>
+        <div class="edu-body">
+          <div class="edu-row">
+            <div>
+              <div class="edu-inst">SMK Yadika 13</div>
+              <div class="edu-deg">Teknik Komputer dan Jaringan (TKJ)</div>
+            </div>
+            <div class="edu-date">2023 — 2026</div>
+          </div>
+          <div class="edu-desc">Mempelajari jaringan komputer, administrasi sistem, perangkat keras, konfigurasi jaringan, dan troubleshooting. Aktif dalam kegiatan praktik laboratorium serta Bengkel TKJ.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="sec-title">Skills</h2>
+    <p class="sec-sub">Kemampuan teknis dan non-teknis yang terus saya kembangkan.</p>
+    <div class="skill-group">
+      <div class="skill-cat">Technical Skills</div>
+      <div class="skill-grid">
+        <div class="skill-card"><div><div class="skill-name">SQL</div><div class="skill-desc">Query untuk manipulasi dan analisis data relasional.</div></div><span class="badge badge-info">Intermediate</span></div>
+        <div class="skill-card"><div><div class="skill-name">Python</div><div class="skill-desc">Scripting dasar, Pandas, dan visualisasi data.</div></div><span class="badge badge-default">Beginner</span></div>
+        <div class="skill-card"><div><div class="skill-name">Data Analysis</div><div class="skill-desc">Eksplorasi dataset untuk menghasilkan insight.</div></div><span class="badge badge-default">Beginner</span></div>
+        <div class="skill-card"><div><div class="skill-name">Database Design</div><div class="skill-desc">Merancang skema basis data relasional.</div></div><span class="badge badge-default">Beginner</span></div>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-cat">Tools &amp; Technologies</div>
+      <div class="skill-grid">
+        <div class="skill-card"><div><div class="skill-name">MySQL</div></div><span class="badge badge-info">Intermediate</span></div>
+        <div class="skill-card"><div><div class="skill-name">PostgreSQL</div></div><span class="badge badge-default">Beginner</span></div>
+        <div class="skill-card"><div><div class="skill-name">Git &amp; GitHub</div></div><span class="badge badge-default">Beginner</span></div>
+        <div class="skill-card"><div><div class="skill-name">Microsoft Excel</div></div><span class="badge badge-info">Intermediate</span></div>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-cat">Soft Skills</div>
+      <div class="skill-grid">
+        <div class="skill-card"><div><div class="skill-name">Critical Thinking</div></div><span class="badge badge-info">Intermediate</span></div>
+        <div class="skill-card"><div><div class="skill-name">Communication</div></div><span class="badge badge-info">Intermediate</span></div>
+        <div class="skill-card"><div><div class="skill-name">Teamwork</div></div><span class="badge badge-info">Intermediate</span></div>
+        <div class="skill-card"><div><div class="skill-name">Problem Solving</div></div><span class="badge badge-info">Intermediate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="sec-title">Experience</h2>
+    <p class="sec-sub">Pengalaman kerja, organisasi, dan kepanitiaan.</p>
+
+    <div class="exp-list">
+
+      <!-- A. Pengalaman Kerja -->
+      <div class="exp-group">
+        <div class="exp-group-label">Pengalaman Kerja</div>
+
+        <div class="exp-item">
+          <div class="exp-icon">✍️</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title">Freelance News Writer</div>
+                <div class="exp-meta">Bali Viva · viva.com</div>
+              </div>
+              <div class="exp-date">Juni 2025 – Agustus 2025</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Menulis dan menyusun artikel berita untuk publikasi digital.</li>
+              <li>Melakukan riset dan pengumpulan informasi dari berbagai sumber.</li>
+              <li>Membuat headline berita yang menarik dan relevan.</li>
+              <li>Mengembangkan ide konten dan menerapkan dasar-dasar storytelling.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-icon">🏭</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title">Praktik Kerja Lapangan (PKL)</div>
+                <div class="exp-meta">PT Amarta Karya (Persero) · IT &amp; Business Development</div>
+              </div>
+              <div class="exp-date">17 Mar – 24 Jun 2025</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Mengolah data inventaris menggunakan Microsoft Excel.</li>
+              <li>Melakukan maintenance komputer dan printer.</li>
+              <li>Membantu administrasi, pencetakan, pemindaian, dan pengarsipan dokumen.</li>
+              <li>Mendukung kebutuhan operasional IT dan Business Development.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-icon">🖥️</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title">Technical Support Assistant</div>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Melakukan instalasi software TOEIC.</li>
+              <li>Membantu instalasi dan perawatan komputer sekolah.</li>
+              <li>Melakukan troubleshooting perangkat komputer.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-icon">📷</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title">Instalasi CCTV</div>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Membantu pemasangan CCTV.</li>
+              <li>Merapikan kabel instalasi dan multimedia.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+   
+      <div class="exp-group">
+        <div class="exp-group-label">Organisasi</div>
+
+        <div class="exp-item">
+          <div class="exp-icon">🔧</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <div>
+                <div class="exp-title">Bengkel TKJ</div>
+                <div class="exp-meta">Teknik Komputer dan Jaringan</div>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Terlibat dalam kegiatan organisasi bidang Teknik Komputer dan Jaringan.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="container">
+    <h2 class="sec-title">Achievements</h2>
+    <p class="sec-sub">Pencapaian dan penghargaan yang pernah diraih.</p>
+
+    <div class="ach-list">
+
+      <div class="ach-card">
+        <div class="ach-icon">🥈</div>
+        <div class="ach-body">
+          <div class="ach-title">Juara 2 – LKS TKJ YADIKA &amp; PAMOR 2026</div>
+          <div class="ach-sub">Meraih posisi kedua dari 16 kelompok peserta dalam kompetisi Lomba Kompetensi Siswa bidang Teknik Komputer dan Jaringan tingkat nasional.</div>
+        </div>
+      </div>
+
+      <div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-body">
+          <div class="ach-title">Siswa Laki-laki Terbaik</div>
+          <div class="ach-sub">Penghargaan atas prestasi akademik dan non-akademik terbaik.</div>
+          <div class="ach-date">Agustus 2024</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <h2 class="sec-title">Sertifikasi</h2>
+    <p class="sec-sub">Bukti proses belajar dan kompetensi saya.</p>
+    <p class="cert-summary" id="cert-summary"></p>
+    <div class="cert-filters" role="group" aria-label="Filter berdasarkan kategori">
+      <button class="cert-filter-btn" data-cat="Semua" aria-pressed="true">Semua</button>
+      <button class="cert-filter-btn" data-cat="Data &amp; AI" aria-pressed="false">Data &amp; AI</button>
+      <button class="cert-filter-btn" data-cat="Jaringan &amp; Keamanan" aria-pressed="false">Jaringan &amp; Keamanan</button>
+      <button class="cert-filter-btn" data-cat="Bahasa" aria-pressed="false">Bahasa</button>
+      <button class="cert-filter-btn" data-cat="Bisnis" aria-pressed="false">Bisnis</button>
+    </div>
+    <div class="cert-grid" id="cert-grid"></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="sec-title">Projects</h2>
+    <p class="sec-sub">Proyek akademik dan personal yang pernah dikerjakan.</p>
+
+    <div class="proj-card">
+      <!-- Thumbnail Dashboard -->
+      <div class="proj-thumb" id="proj-thumb-osin" role="button" aria-label="Lihat gambar dashboard lebih besar" tabindex="0">
+        <img src="public/images/dashboard-osin.png" alt="Dashboard Power BI — Analisis Data Peserta LPK Osin">
+      </div>
+
+      <div class="proj-body">
+        <!-- Kategori -->
+        <div class="proj-cats">
+          <span class="proj-cat">Data Analysis</span>
+          <span class="proj-cat">Database Management</span>
+          <span class="proj-cat">Business Intelligence</span>
+        </div>
+
+        <!-- Judul -->
+        <div class="proj-title">Analisis Data Peserta Pelatihan &amp; Penempatan Kerja ke Jepang</div>
+        <div class="proj-subtitle">Studi Kasus: LPK Osin</div>
+
+        <!-- Deskripsi -->
+        <div class="proj-desc">
+          Proyek analisis data <em>end-to-end</em> yang berfokus pada pengolahan dan analisis data peserta pelatihan serta penempatan kerja ke Jepang dengan studi kasus LPK Osin.
+          <br><br>
+          Mencakup perancangan database relasional menggunakan PostgreSQL, pembuatan dan pengolahan data simulasi, penyusunan query SQL untuk analisis, hingga pengembangan dashboard interaktif menggunakan Power BI untuk menghasilkan insight yang mendukung pemahaman proses bisnis.
+          <br><br>
+          Proyek ini berawal dari tugas mata kuliah Basis Data, terinspirasi dari kunjungan ke stan LPK Osin pada kegiatan Jobfair kampus, kemudian dikembangkan secara mandiri.
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="proj-stack">
+          <span class="proj-badge">PostgreSQL</span>
+          <span class="proj-badge">SQL</span>
+          <span class="proj-badge">Power BI</span>
+          <span class="proj-badge">pgAdmin</span>
+        </div>
+
+        <hr class="proj-divider">
+
+        <!-- Key Features -->
+        <div class="proj-features">
+          <div class="proj-feat-block">
+            <div class="proj-feat-title">Database Design</div>
+            <ul class="proj-feat-list">
+              <li>Merancang database relasional dengan 8 tabel.</li>
+              <li>Mengimplementasikan Primary Key dan Foreign Key.</li>
+              <li>Merepresentasikan proses bisnis pelatihan hingga keberangkatan peserta.</li>
+            </ul>
+          </div>
+          <div class="proj-feat-block">
+            <div class="proj-feat-title">SQL Data Analysis</div>
+            <ul class="proj-feat-list">
+              <li>Menggunakan JOIN untuk menghubungkan tabel.</li>
+              <li>Menggunakan GROUP BY dan HAVING.</li>
+              <li>Menggunakan fungsi agregasi untuk menghasilkan informasi analitis.</li>
+            </ul>
+          </div>
+          <div class="proj-feat-block">
+            <div class="proj-feat-title">Interactive Dashboard</div>
+            <ul class="proj-feat-list">
+              <li>6 visualisasi utama: distribusi program, skema pembayaran, tren bulanan, pendidikan peserta, mitra perusahaan, dan funnel keberhasilan.</li>
+              <li>Slicer interaktif berdasarkan program dan rentang tanggal pendaftaran.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Insights -->
+        <div class="proj-insights">
+          <div class="proj-insights-title">Key Insights</div>
+          <ul class="proj-insights-list">
+            <li>Tokutei Ginou menjadi program dengan jumlah peminat tertinggi.</li>
+            <li>Skema dana talangan menjadi pilihan mayoritas peserta.</li>
+            <li>Tren pendaftaran meningkat pada periode Mei–Desember.</li>
+            <li>Fuji Food Processing menjadi perusahaan mitra dengan jumlah penempatan peserta terbesar.</li>
+          </ul>
+        </div>
+
+        <!-- Footer: disclaimer + link -->
+        <div class="proj-footer">
+          <p class="proj-disclaimer">* Seluruh data peserta dan transaksi dalam proyek ini merupakan data simulasi/fiktif untuk keperluan pembelajaran dan analisis. Proyek ini tidak menggunakan data internal LPK Osin yang sebenarnya.</p>
+          <div class="proj-links">
+            <a href="https://github.com/reyzaza10/Analisis_Data_Peserta_Pelatihan_Penempatan_Kerja_Jepang_Studi_Kasus_LPK_Osin" target="_blank" rel="noopener" class="proj-link proj-link-primary">
+              ↗ View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Preview gambar dashboard">
+  <button class="lb-close" id="lb-close" aria-label="Tutup">✕</button>
+  <img id="lb-img" src="" alt="Dashboard preview">
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Muhammad Reyza Ashidiqie</div>
+        <div class="footer-headline">Smart City Information Systems Student | Data Enthusiast</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/reyzaza10" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://id.linkedin.com/in/muhammad-reyza-ashidiqie-bb7070431" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://instagram.com/reyza_ashidiqie" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:2019reyza@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Muhammad Reyza Ashidiqie. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement,btn=document.getElementById('theme-btn'),dark=false;
+  function apply(d){dark=d;if(d){html.setAttribute('data-dark','');btn.textContent='Light';}else{html.removeAttribute('data-dark');btn.textContent='Dark';}}
+  if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)apply(true);
+  btn.onclick=function(){apply(!dark)};
+  var ham=document.getElementById('ham-btn'),menu=document.getElementById('mobile-menu');
+  ham.onclick=function(){menu.classList.toggle('open');ham.textContent=menu.classList.contains('open')?'✕':'☰'};
+  menu.querySelectorAll('a').forEach(function(a){a.onclick=function(){menu.classList.remove('open');ham.textContent='☰'}});
+  var secs=['hero','about','education','skills','experience','achievements','certifications','projects'],
+      links=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+80,cur='hero';
+    secs.forEach(function(id){var el=document.getElementById(id);if(el&&el.offsetTop<=y)cur=id;});
+    links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  },{passive:true});
+  // lightbox
+  var lb=document.getElementById('lb-overlay'),lbImg=document.getElementById('lb-img'),lbClose=document.getElementById('lb-close');
+  function lbOpen(src){lbImg.src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+  function lbCloseF(){lb.classList.remove('open');document.body.style.overflow='';lbImg.src='';}
+  var thumb=document.getElementById('proj-thumb-osin');
+  if(thumb){
+    thumb.addEventListener('click',function(){lbOpen(thumb.querySelector('img').src);});
+    thumb.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();lbOpen(thumb.querySelector('img').src);}});
+  }
+  if(lbClose)lbClose.addEventListener('click',lbCloseF);
+  if(lb)lb.addEventListener('click',function(e){if(e.target===lb)lbCloseF();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lbCloseF();});
+
+  // ─── CERTIFICATIONS ──────────────────────────────────────────────
+  // Untuk menambah sertifikat baru, tambahkan objek baru di array ini.
+  var CERTS = [
+    {nama:"Unleashing the Power of AI Agents",penerbit:"IBM SkillsBuild",kategori:"Data & AI",terbit:"2026-11-04",berlaku:null,id:"ALM-COURSE_3825456",catatan:"1 jam 30 menit",url:null},
+    {nama:"Classifying Data Using IBM Granite",penerbit:"IBM SkillsBuild",kategori:"Data & AI",terbit:"2026-11-03",berlaku:null,id:"ALM-COURSE_4058910",catatan:"1 jam 30 menit",url:null},
+    {nama:"Getting Started with Data",penerbit:"IBM SkillsBuild",kategori:"Data & AI",terbit:"2026-11-03",berlaku:null,id:"PLAN-14F2691E3A32",catatan:"Credential",url:null},
+    {nama:"Belajar Dasar Visualisasi Data",penerbit:"Dicoding (Google Developers Authorized Training Partner)",kategori:"Data & AI",terbit:"2026-10-26",berlaku:"2029-10-26",id:"NVP7W4J24ZR0",catatan:null,url:"https://dicoding.com/certificates/NVP7W4J24ZR0"},
+    {nama:"KKNI Level II Certification in Computer and Network Engineering",penerbit:"BNSP",kategori:"Jaringan & Keamanan",terbit:"2026-04",berlaku:"2029-04",id:"J 1360 00078 2026",catatan:"Network Administration, Wireless Networking",url:null},
+    {nama:"TOEIC Listening and Reading Test",penerbit:"International Test Center",kategori:"Bahasa",terbit:"2025-08",berlaku:"2027-08",id:"1878330",catatan:"Skor 645",url:null},
+    {nama:"BCA Cash Management Academy",penerbit:"Electronic Science Indonesia",kategori:"Bisnis",terbit:"2025-05",berlaku:null,catatan:"Nilai 91,17%",url:null},
+    {nama:"Basic Cyber Security untuk Pelajar Sekolah Menengah",penerbit:"Digital Talent Scholarship",kategori:"Jaringan & Keamanan",terbit:"2025-03",berlaku:null,id:"1949845860-7/TA/BLSDM.Komdigi/2025",catatan:"Cybersecurity, Network Security",url:null}
+  ];
+
+  function fmtTanggal(str){
+    if(!str)return null;
+    var parts=str.split('-');
+    var bln=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+    if(parts.length===3){return parts[2]+' '+bln[parseInt(parts[1],10)-1]+' '+parts[0];}
+    if(parts.length===2){return bln[parseInt(parts[1],10)-1]+' '+parts[0];}
+    return str;
+  }
+
+  function buatKartu(c){
+    var kartu=document.createElement('article');
+    kartu.className='cert-card';
+    kartu.setAttribute('data-kategori',c.kategori);
+
+    var badge='<span class="cert-cat-badge">'+c.kategori+'</span>';
+    var nama='<div class="cert-name">'+c.nama+'</div>';
+    var penerbit='<div class="cert-issuer">'+c.penerbit+(c.catatan?'<br><span style="opacity:.8">'+c.catatan+'</span>':'')+'</div>';
+
+    var tglTerbit=fmtTanggal(c.terbit);
+    var tglBerlaku=c.berlaku?fmtTanggal(c.berlaku):null;
+    var datesHtml='<div class="cert-dates">';
+    if(tglTerbit) datesHtml+='<span>📅 Terbit: '+tglTerbit+'</span>';
+    if(tglBerlaku) datesHtml+='<span>⏳ Berlaku s.d. '+tglBerlaku+'</span>';
+    datesHtml+='</div>';
+
+    var idRow='';
+    if(c.id){
+      idRow='<div class="cert-id-row"><span class="cert-id" title="'+c.id+'">ID: '+c.id+'</span>'
+        +'<button class="cert-copy-btn" aria-label="Salin ID kredensial">Salin</button></div>';
+    }
+
+    var footer='';
+    if(c.url){
+      footer='<div class="cert-footer"><a href="'+c.url+'" target="_blank" rel="noopener" class="cert-verify-btn" aria-label="Verifikasi sertifikat '+c.nama+' di situs penerbit">↗ Verifikasi</a></div>';
+    }
+
+    kartu.innerHTML=badge+nama+penerbit+datesHtml+idRow+footer;
+
+    if(c.id){
+      kartu.querySelector('.cert-copy-btn').addEventListener('click',function(){
+        var btn=this;
+        navigator.clipboard?navigator.clipboard.writeText(c.id).then(function(){
+          btn.textContent='✓';setTimeout(function(){btn.textContent='Salin';},1500);
+        }):function(){
+          var ta=document.createElement('textarea');ta.value=c.id;document.body.appendChild(ta);ta.select();
+          try{document.execCommand('copy');btn.textContent='✓';setTimeout(function(){btn.textContent='Salin';},1500);}catch(e){}
+          document.body.removeChild(ta);
+        }();
+      });
+    }
+    return kartu;
+  }
+
+  var certGrid=document.getElementById('cert-grid');
+  var certSummary=document.getElementById('cert-summary');
+  if(certGrid){
+    var penerbitUnik=[];
+    CERTS.forEach(function(c){if(penerbitUnik.indexOf(c.penerbit)<0)penerbitUnik.push(c.penerbit);});
+    certSummary.textContent=CERTS.length+' sertifikat · '+penerbitUnik.length+' penerbit';
+
+    CERTS.forEach(function(c){certGrid.appendChild(buatKartu(c));});
+
+    // filter
+    var filterBtns=document.querySelectorAll('.cert-filter-btn');
+    filterBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var cat=this.getAttribute('data-cat');
+        filterBtns.forEach(function(b){b.setAttribute('aria-pressed','false');});
+        this.setAttribute('aria-pressed','true');
+        certGrid.querySelectorAll('.cert-card').forEach(function(kartu){
+          var kat=kartu.getAttribute('data-kategori');
+          var tampil=(cat==='Semua'||kat===cat);
+          kartu.hidden=!tampil;
+          if(tampil){setTimeout(function(){kartu.classList.add('visible');},10);}
+          else{kartu.classList.remove('visible');}
+        });
+      });
+    });
+
+    // fade-in on scroll
+    var io=('IntersectionObserver' in window)?new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.1}):null;
+    certGrid.querySelectorAll('.cert-card').forEach(function(kartu){
+      if(io){io.observe(kartu);}else{kartu.classList.add('visible');}
+    });
+  }
+  // ─────────────────────────────────────────────────────────────────
+})();
+</script>
+</body>
+</html>
