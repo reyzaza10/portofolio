@@ -3,14 +3,15 @@ import { notFound } from 'next/navigation';
 import { certifications } from '@/data/certifications';
 import { CertificationDetailView } from '@/components/cards/CertificationCard';
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return certifications.map((c) => ({ slug: c.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const cert = certifications.find((c) => c.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const cert = certifications.find((c) => c.slug === slug);
   if (!cert) return { title: 'Not Found' };
   return {
     title: cert.name,
@@ -18,8 +19,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function CertificationDetailPage({ params }: Props) {
-  const cert = certifications.find((c) => c.slug === params.slug);
+export default async function CertificationDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const cert = certifications.find((c) => c.slug === slug);
   if (!cert) notFound();
 
   return (
