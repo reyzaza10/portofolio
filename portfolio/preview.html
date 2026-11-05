@@ -49,7 +49,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-
 .avatar {width:260px;height:300px;border-radius:18px;background:var(--bg2);border:2px solid var(--border);overflow:hidden;margin-left:auto}
 .avatar img {width: 100%;height: 100%;object-fit: contain;object-position: center;display: block;border-radius: 18px;}
 
-/* SECTION */
+
 section{padding:80px 0}
 section:nth-child(even){background:var(--bg2)}
 section:nth-child(odd){background:var(--bg)}
@@ -59,7 +59,6 @@ section:nth-child(odd){background:var(--bg)}
 .view-all{font-size:13px;color:var(--accent)}
 .view-all:hover{text-decoration:underline}
 
-/* ABOUT */
 .about-grid{display:grid;grid-template-columns:190px 1fr;gap:36px;align-items:start}
 .about-photo{width:190px;height:190px;border-radius:14px;background:var(--bg2);border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .about-photo img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:14px}
@@ -67,7 +66,6 @@ section:nth-child(odd){background:var(--bg)}
 .about-text p+p{margin-top:12px}
 .goal-label{font-style: italic ;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-top:50px;margin-bottom:5px}
 
-/* EDUCATION */
 .education-list {
     display: flex;
     flex-direction: column;
@@ -106,7 +104,6 @@ section:nth-child(odd){background:var(--bg)}
     }
 }
 
-/* SKILLS */
 .skill-cat{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2);margin-bottom:12px}
 .skill-group+.skill-group{margin-top:28px}
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
@@ -120,7 +117,6 @@ section:nth-child(odd){background:var(--bg)}
 .badge-success{background:#f0fdf4;color:#15803d}
 [data-dark] .badge-success{background:#14532d;color:#86efac}
 
-/* EXPERIENCE */
 .exp-list{display:flex;flex-direction:column;gap:0}
 .exp-group{margin-bottom:32px}
 .exp-group-label{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--fg2);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
@@ -135,7 +131,7 @@ section:nth-child(odd){background:var(--bg)}
 .exp-bullets{list-style:none;padding:0;margin-top:9px;display:flex;flex-direction:column;gap:4px}
 .exp-bullets li{font-size:13px;color:var(--fg2);line-height:1.55;padding-left:14px;position:relative}
 .exp-bullets li::before{content:"–";position:absolute;left:0;color:var(--border)}
-/* ACHIEVEMENTS */
+
 .ach-list{display:flex;flex-direction:column;gap:12px}
 .ach-card{display:flex;gap:16px;padding:18px 20px;border-radius:12px;border:1px solid var(--border);background:var(--bg);align-items:flex-start}
 .ach-icon{width:38px;height:38px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
@@ -144,13 +140,11 @@ section:nth-child(odd){background:var(--bg)}
 .ach-sub{font-size:13px;color:var(--fg2);margin-top:3px;line-height:1.5}
 .ach-date{font-size:12px;color:var(--fg2);margin-top:4px}
 
-/* EMPTY */
 .empty{padding:50px 0;text-align:center}
 .empty-dot{width:42px;height:42px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:16px;color:var(--fg2)}
 .empty-title{font-size:14px;font-weight:500;color:var(--fg2)}
 .empty-sub{font-size:13px;color:var(--fg2);opacity:.6;margin-top:4px}
 
-/* PROJECTS */
 .proj-card{border-radius:var(--radius);border:1px solid var(--border);background:var(--bg);overflow:hidden;transition:border-color .15s}
 .proj-card:hover{border-color:var(--fg2)}
 .proj-thumb{width:100%;overflow:hidden;background:var(--bg2);cursor:zoom-in;display:block;border-bottom:1px solid var(--border)}
@@ -195,8 +189,6 @@ section:nth-child(odd){background:var(--bg)}
   .proj-links{width:100%}
   .proj-link{flex:1;justify-content:center}
 }
-
-/* CERTIFICATIONS */
 .cert-summary{font-size:13px;color:var(--fg2);margin-bottom:20px}
 .cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .cert-filter-btn{padding:5px 14px;border-radius:99px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--bg);color:var(--fg2);cursor:pointer;transition:background .15s,border-color .15s,color .15s}
@@ -224,7 +216,6 @@ section:nth-child(odd){background:var(--bg)}
 .cert-verify-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:7px;font-size:12px;font-weight:500;border:1px solid var(--border);color:var(--fg2);transition:background .15s,border-color .15s,color .15s}
 .cert-verify-btn:hover{background:var(--bg2);border-color:var(--fg2);color:var(--fg)}
 
-/* FOOTER */
 footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .footer-name{font-size:13px;font-weight:500}
@@ -553,18 +544,17 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
       </div>
 
       <div class="proj-body">
-        <!-- Kategori -->
+        
         <div class="proj-cats">
           <span class="proj-cat">Data Analysis</span>
           <span class="proj-cat">Database Management</span>
           <span class="proj-cat">Business Intelligence</span>
         </div>
 
-        <!-- Judul -->
+        
         <div class="proj-title">Analisis Data Peserta Pelatihan &amp; Penempatan Kerja ke Jepang</div>
         <div class="proj-subtitle">Studi Kasus: LPK Osin</div>
 
-        <!-- Deskripsi -->
         <div class="proj-desc">
           Proyek analisis data <em>end-to-end</em> yang berfokus pada pengolahan dan analisis data peserta pelatihan serta penempatan kerja ke Jepang dengan studi kasus LPK Osin.
           <br><br>
@@ -573,7 +563,7 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
           Proyek ini berawal dari tugas mata kuliah Basis Data, terinspirasi dari kunjungan ke stan LPK Osin pada kegiatan Jobfair kampus, kemudian dikembangkan secara mandiri.
         </div>
 
-        <!-- Tech Stack -->
+        
         <div class="proj-stack">
           <span class="proj-badge">PostgreSQL</span>
           <span class="proj-badge">SQL</span>
@@ -583,7 +573,7 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
 
         <hr class="proj-divider">
 
-        <!-- Key Features -->
+        
         <div class="proj-features">
           <div class="proj-feat-block">
             <div class="proj-feat-title">Database Design</div>
@@ -610,7 +600,7 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
           </div>
         </div>
 
-        <!-- Key Insights -->
+        
         <div class="proj-insights">
           <div class="proj-insights-title">Key Insights</div>
           <ul class="proj-insights-list">
@@ -621,7 +611,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
           </ul>
         </div>
 
-        <!-- Footer: disclaimer + link -->
         <div class="proj-footer">
           <p class="proj-disclaimer">* Seluruh data peserta dan transaksi dalam proyek ini merupakan data simulasi/fiktif untuk keperluan pembelajaran dan analisis. Proyek ini tidak menggunakan data internal LPK Osin yang sebenarnya.</p>
           <div class="proj-links">
@@ -636,7 +625,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
   </div>
 </section>
 
-<!-- Lightbox -->
 <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Preview gambar dashboard">
   <button class="lb-close" id="lb-close" aria-label="Tutup">✕</button>
   <img id="lb-img" src="" alt="Dashboard preview">
@@ -689,8 +677,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
   if(lb)lb.addEventListener('click',function(e){if(e.target===lb)lbCloseF();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lbCloseF();});
 
-  // ─── CERTIFICATIONS ──────────────────────────────────────────────
-  // Untuk menambah sertifikat baru, tambahkan objek baru di array ini.
   var CERTS = [
     {nama:"Unleashing the Power of AI Agents",penerbit:"IBM SkillsBuild",kategori:"Data & AI",terbit:"2026-11-04",berlaku:null,id:"ALM-COURSE_3825456",catatan:"1 jam 30 menit",url:null},
     {nama:"Classifying Data Using IBM Granite",penerbit:"IBM SkillsBuild",kategori:"Data & AI",terbit:"2026-11-03",berlaku:null,id:"ALM-COURSE_4058910",catatan:"1 jam 30 menit",url:null},
@@ -764,7 +750,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
 
     CERTS.forEach(function(c){certGrid.appendChild(buatKartu(c));});
 
-    // filter
     var filterBtns=document.querySelectorAll('.cert-filter-btn');
     filterBtns.forEach(function(btn){
       btn.addEventListener('click',function(){
@@ -781,7 +766,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
       });
     });
 
-    // fade-in on scroll
     var io=('IntersectionObserver' in window)?new IntersectionObserver(function(entries){
       entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
     },{threshold:0.1}):null;
@@ -789,7 +773,6 @@ footer{border-top:1px solid var(--border);background:var(--bg);padding:28px 0}
       if(io){io.observe(kartu);}else{kartu.classList.add('visible');}
     });
   }
-  // ─────────────────────────────────────────────────────────────────
 })();
 </script>
 </body>
